@@ -1,6 +1,6 @@
 // "use strict";
 
-import {FSFile, SizeFilter, ExtensionFilter, Directory, SearchCommand} from './filesearch';
+import {FSFile, NameFilter, SizeFilter, ExtensionFilter, Directory, SearchCommand} from './filesearch';
 
 // create files
 
@@ -24,6 +24,6 @@ dir.addEntity(nestedDir);
 
 const searchApi = new SearchCommand();
 
-const searchResults1 = searchApi.search(dir,[new ExtensionFilter('txt'),new SizeFilter(100)]);
+const searchResults1 = searchApi.search(dir,[new NameFilter('file')]);
 
 console.log('searchResults1', searchResults1);

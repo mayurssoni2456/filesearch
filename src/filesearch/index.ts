@@ -46,6 +46,21 @@ export interface IFilter {
     apply(fsEntity: FileSystemEntity): boolean;
 }
 
+
+export class NameFilter implements IFilter {
+
+    private _name: string;
+
+    constructor(filename: string) {
+        this._name = filename
+    }
+
+    apply(fsEntity: FileSystemEntity): boolean {
+        return fsEntity.name.includes(this._name);
+    }
+}
+
+
 export class SizeFilter implements IFilter {
 
     private _sizeLimit: number;
